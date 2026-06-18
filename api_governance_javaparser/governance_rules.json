@@ -1,0 +1,51 @@
+{
+  "_说明": "接口入参规范扫描规则配置。换项目时优先改这个文件，不建议直接改 Java 代码。",
+  "_使用建议": "默认配置偏保守，目标是减少误报；如果项目规范更严格，可以逐步增加字段名、开启扩展规则。",
+
+  "_排除Controller说明": "这些 Controller 通常是测试、示例、工具接口，不纳入扫描，避免报告出现无价值问题。",
+  "excludedControllerKeywords": ["testcontroller", "democontroller", "examplecontroller", "samplecontroller"],
+  "excludedPathKeywords": ["/controller/tool/", "/controller/demo/", "/controller/example/", "/demo/", "/sample/"],
+
+  "_操作识别说明": "readOperationKeywords 用于过滤查询/导出接口；writeOperationKeywords 用于识别新增、修改、删除、登录、注册等需要重点看入参的接口。",
+  "readOperationKeywords": ["list", "page", "query", "search", "select", "export", "download", "check", "tree", "view", "detail", "info", "profile", "index", "main", "monitor", "cache", "get", "find", "ajax", "option"],
+  "writeOperationKeywords": ["add", "save", "create", "insert", "edit", "update", "modify", "change", "submit", "register", "login", "reset", "password", "pwd", "delete", "remove", "import", "upload"],
+
+  "_字段规则说明": "下面这些字段名用于判断哪些字段值得检查。不要把所有字段都放进来，否则会导致误报变多。",
+  "usernameFields": ["username", "userName", "loginName", "account", "accountName"],
+  "passwordFields": ["password", "oldPassword", "newPassword", "confirmPassword"],
+  "phoneFields": ["phone", "mobile", "mobilePhone", "telephone", "tel"],
+  "emailFields": ["email"],
+  "codeFields": ["code", "captcha", "verifyCode", "smsCode", "uuid"],
+
+  "_业务字段说明": "这些字段只作为中风险或建议项，主要给人工复核参考，不直接认定一定违规。",
+  "businessRequiredFields": ["name", "title", "type", "status", "sort", "orderNum", "parentId", "deptId", "roleId", "postId", "dictType", "dictLabel", "dictValue", "configKey", "configValue", "jobName", "jobGroup", "cronExpression", "menuName", "perms", "noticeTitle", "noticeType"],
+  "businessLengthFields": ["name", "title", "dictLabel", "dictValue", "configKey", "configValue", "jobName", "jobGroup", "cronExpression", "menuName", "perms", "noticeTitle"],
+
+  "_范围和枚举说明": "用于检查数值边界和枚举/字典取值限制。只对写接口中的典型字段提示，避免误报过多。",
+  "numericRangeFields": ["sort", "orderNum", "order", "priority", "status", "type", "age", "count", "num", "number", "quantity", "amount", "price", "min", "max", "limit"],
+  "enumLikeFields": ["status", "type", "sex", "gender", "state", "flag", "enabled", "visible", "delFlag", "menuType", "noticeType", "dictType", "jobGroup", "roleKey"],
+  "rangeValidationAnnotations": ["Min", "Max", "Range", "DecimalMin", "DecimalMax", "Positive", "PositiveOrZero", "Negative", "NegativeOrZero"],
+  "enumValidationAnnotations": ["Pattern", "EnumValid", "DictValid", "InEnum", "ValueOfEnum"],
+
+  "_DTO排除说明": "这些类名、后缀、关键词默认不作为请求入参 DTO 扫描，避免日志类、返回类、配置类进入报告。",
+  "excludedDtoNames": ["BaseEntity", "TreeEntity", "BaseController", "AjaxResult", "R", "Result", "TableDataInfo", "GenTable", "GenTableColumn"],
+  "excludedDtoSuffixes": ["Log", "Logs", "History", "Record", "Records", "VO", "Vo", "View", "Response", "Result", "Constant", "Constants", "Config", "Properties"],
+  "excludedDtoContains": ["OperLog", "JobLog", "Logininfor"],
+
+  "_自定义注解说明": "如果项目封装了自己的校验注解，比如 @Mobile、@DictValid，可以写在这里，扫描器会认为它们也属于有效校验。",
+  "customValidationAnnotations": ["Mobile", "Phone", "DictValid", "EnumValid", "IdCard", "SensitiveWord"],
+
+  "_扩展规则说明": "下面是适合静态扫描的扩展规则：全局异常处理、异常返回结构、异常堆栈打印、统一返回结构。分页参数差异较大，默认仍关闭。",
+  "requireGlobalExceptionHandler": true,
+  "globalExceptionAdviceAnnotations": ["RestControllerAdvice", "ControllerAdvice"],
+  "exceptionHandlerAnnotations": ["ExceptionHandler"],
+  "requireExceptionHandlerUnifiedReturn": true,
+  "forbidPrintStackTraceInExceptionHandler": true,
+
+  "requireUnifiedReturnType": true,
+  "unifiedReturnTypes": ["AjaxResult", "TableDataInfo", "ResponseEntity", "R", "Result", "ApiResult", "CommonResult", "ResponseResult"],
+
+  "requirePageParamsForListApi": false,
+  "pageNumberParamNames": ["pageNum", "pageNo", "page", "current"],
+  "pageSizeParamNames": ["pageSize", "size", "limit"]
+}

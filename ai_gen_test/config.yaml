@@ -1,0 +1,71 @@
+# AI 接口测试生成配置
+# 命令行参数优先级高于本文件；常用配置放这里后，平时直接运行 python generate_api_tests.py 即可。
+
+# Swagger 文件
+spec: swaggerr.json
+
+# 生成模式：swagger / swagger_code / swagger_code_log
+mode: swagger_code_log
+
+# 异常用例模式：basic / full
+exception_mode: basic
+
+# 重复执行次数
+repeat: 1
+
+# 并发生成线程数；真实项目建议 2~4，接口较多时可明显缩短耗时
+generate_workers: 4
+
+# 每个接口最多保留的正常成功样本数
+max_normal_cases_per_api: 3
+
+# 被测服务根地址
+base_url: http://172.16.240.86:8087
+
+# 后端源码目录
+code_dir: C:\Users\Administrator\Desktop\RuoYi
+
+# 代理采集到的接口访问日志
+log_file: .\proxy_capture\logs\api_access.log
+
+# 只测试某个接口模块；比如系统用户模块
+api_prefix: /system/user
+
+# 代码扫描过滤
+code_include:
+code_exclude: target,.git,node_modules,dist
+
+# 说明：如果某个接口没有日志命中，工具会从已有代理日志中复用 Authorization 请求头。
+
+
+# 网关前缀：前后端分离常见 /dev-api；前后端不分离项目可设为 "" 或 []
+gateway_prefixes: ""  
+
+# Ollama 配置
+ollama:
+  model: qwen2.5:3b
+  timeout: 600
+  retry: 2
+  num_predict: 1200
+  temperature: 0.1
+
+# 接口规范扫描补充信息（可选）：JavaParser 扫描生成的 *_governance_prompt_context.txt 文件路径
+# 不传则不影响原有流程，只在 AI Prompt 末尾追加【接口规范扫描补充信息】段
+governance_context: F:\test\governance-platform\api_governance_javaparser\governance_output\RuoYi_20260618_090518\RuoYi_governance_prompt_context.txt
+
+# 认证复用配置：真实项目优先复用代理日志中的 Cookie/JSESSIONID；暂不做自动登录刷新。
+# 不需要自动登录时，username/password 留空即可。
+auth:
+  login_url: /login
+  username: "admin"
+  password: "123456"
+  username_field: username
+  password_field: password
+  token_paths: token,data.token,access_token,data.access_token
+  header_prefix: Bearer
+  # 从日志中复用的认证请求头名称；Cookie 放前面，优先适配 JSESSIONID 认证项目。
+  replay_header_names: Cookie,Authorization,X-Token,token,access_token,isToken,repeatSubmit
+  # Cookie 中存在 JSESSIONID 时，优先使用 Cookie，避免旧 Authorization/token 干扰认证。
+  cookie_first: true
+  # 暂时不做自动登录刷新，只复用日志中最新认证头。
+  enable_refresh: false

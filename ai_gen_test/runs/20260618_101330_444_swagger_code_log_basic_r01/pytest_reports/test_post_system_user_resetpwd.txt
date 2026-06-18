@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________________ test_post_system_user_resetpwd_case_1 ____________________
+runs\20260618_101330_444_swagger_code_log_basic_r01\generated_tests\test_post_system_user_resetpwd.py:16: in test_post_system_user_resetpwd_case_1
+    assert data.get('code') == 0
+E   AssertionError: assert 500 == 0
+E    +  where 500 = <built-in method get of dict object at 0x00000257A8BB3D00>('code')
+E    +    where <built-in method get of dict object at 0x00000257A8BB3D00> = {'code': 500, 'msg': '操作失败'}.get
+=========================== short test summary info ===========================
+FAILED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_resetpwd.py::test_post_system_user_resetpwd_case_1
+1 failed in 0.14s

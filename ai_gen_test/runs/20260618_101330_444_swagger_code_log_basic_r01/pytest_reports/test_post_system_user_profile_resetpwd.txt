@@ -1,0 +1,20 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+________________ test_post_system_user_profile_resetpwd_case_1 ________________
+runs\20260618_101330_444_swagger_code_log_basic_r01\generated_tests\test_post_system_user_profile_resetpwd.py:17: in test_post_system_user_profile_resetpwd_case_1
+    assert data.get('code') == 200
+E   AssertionError: assert 500 == 200
+E    +  where 500 = <built-in method get of dict object at 0x000001A3EB13E3C0>('code')
+E    +    where <built-in method get of dict object at 0x000001A3EB13E3C0> = {'code': 500, 'msg': '修改密码失败，旧密码错误'}.get
+_____ test_auto_normal_post_system_user_profile_resetpwd[normal_baseline] _____
+runs\20260618_101330_444_swagger_code_log_basic_r01\generated_tests\test_post_system_user_profile_resetpwd.py:40: in test_auto_normal_post_system_user_profile_resetpwd
+    assert data.get('code') == expected_body.get('code')
+E   AssertionError: assert 500 == 200
+E    +  where 500 = <built-in method get of dict object at 0x000001A3EB1032C0>('code')
+E    +    where <built-in method get of dict object at 0x000001A3EB1032C0> = {'code': 500, 'msg': '修改密码失败，旧密码错误'}.get
+E    +  and   200 = <built-in method get of dict object at 0x000001A3EB12FC40>('code')
+E    +    where <built-in method get of dict object at 0x000001A3EB12FC40> = {'code': 200}.get
+=========================== short test summary info ===========================
+FAILED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_profile_resetpwd.py::test_post_system_user_profile_resetpwd_case_1
+FAILED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_profile_resetpwd.py::test_auto_normal_post_system_user_profile_resetpwd[normal_baseline]
+2 failed in 0.17s

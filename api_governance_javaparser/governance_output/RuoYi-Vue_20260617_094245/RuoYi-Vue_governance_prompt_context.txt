@@ -1,0 +1,35 @@
+【接口入参规范扫描结果】
+- 高风险｜密码字段缺少必填校验｜LoginBody.password｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java:18
+- 高风险｜账号类字段缺少必填校验｜LoginBody.username｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java:13
+- 高风险｜密码字段缺少必填校验｜SysUser.password｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysUser.java:59
+- 高风险｜账号类字段缺少必填校验｜SysUser.userName｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysUser.java:36
+- 中风险｜验证码/编码字段缺少必填校验｜LoginBody.code｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java:23
+- 中风险｜密码字段缺少长度限制｜LoginBody.password｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java:18
+- 中风险｜验证码/编码字段缺少必填校验｜LoginBody.uuid｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/model/LoginBody.java:28
+- 中风险｜枚举/字典字段缺少取值限制｜SysDept.delFlag｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:50
+- 中风险｜写接口关键业务字段缺少校验｜SysDept.deptId｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:23
+- 中风险｜写接口关键业务字段缺少校验｜SysDept.orderNum｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:35
+- 中风险｜数值字段缺少范围校验｜SysDept.orderNum｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:35
+- 中风险｜写接口关键业务字段缺少校验｜SysDept.parentId｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:26
+- 中风险｜写接口关键业务字段缺少校验｜SysDept.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:47
+- 中风险｜枚举/字典字段缺少取值限制｜SysDept.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java:47
+- 中风险｜写接口关键业务字段缺少校验｜SysDictData.dictLabel｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:30
+- 中风险｜写接口关键业务字段缺少校验｜SysDictData.dictType｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:38
+- 中风险｜枚举/字典字段缺少取值限制｜SysDictData.dictType｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:38
+- 中风险｜写接口关键业务字段缺少校验｜SysDictData.dictValue｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:34
+- 中风险｜写接口关键业务字段缺少校验｜SysDictData.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:52
+- 中风险｜枚举/字典字段缺少取值限制｜SysDictData.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java:52
+- 中风险｜写接口关键业务字段缺少校验｜SysDictType.dictType｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java:30
+- 中风险｜枚举/字典字段缺少取值限制｜SysDictType.dictType｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java:30
+- 中风险｜写接口关键业务字段缺少校验｜SysDictType.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java:34
+- 中风险｜枚举/字典字段缺少取值限制｜SysDictType.status｜ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java:34
+- 中风险｜写接口关键业务字段缺少校验｜SysJob.cronExpression｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:42
+- 中风险｜写接口关键业务字段缺少校验｜SysJob.jobGroup｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:34
+- 中风险｜枚举/字典字段缺少取值限制｜SysJob.jobGroup｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:34
+- 中风险｜写接口关键业务字段缺少校验｜SysJob.jobName｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:30
+- 中风险｜写接口关键业务字段缺少校验｜SysJob.status｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:54
+- 中风险｜枚举/字典字段缺少取值限制｜SysJob.status｜ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java:54
+
+高风险TOP问题：
+- 账号类字段缺少必填校验（2处）
+- 密码字段缺少必填校验（2处）

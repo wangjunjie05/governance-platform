@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________________ test_post_system_user_remove_case_1 _____________________
+runs\20260618_101330_444_swagger_code_log_basic_r01\generated_tests\test_post_system_user_remove.py:16: in test_post_system_user_remove_case_1
+    assert data.get('code') == 0
+E   assert 500 == 0
+E    +  where 500 = <built-in method get of dict object at 0x00000244848E8E40>('code')
+E    +    where <built-in method get of dict object at 0x00000244848E8E40> = {'code': 500, 'msg': "\r\n### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in ...ual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\n; bad SQL grammar []"}.get
+=========================== short test summary info ===========================
+FAILED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_remove.py::test_post_system_user_remove_case_1
+1 failed in 0.15s

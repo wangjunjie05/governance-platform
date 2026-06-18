@@ -1,0 +1,6 @@
+..                                                                       [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_authrole_insertauthrole.py::test_post_system_user_authrole_insertauthrole_case_1
+PASSED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_authrole_insertauthrole.py::test_auto_exception_post_system_user_authrole_insertauthrole[ex_1_invalid_type_userid]
+2 passed in 0.04s

@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________________ test_post_system_user_changestatus_case_1 __________________
+runs\20260618_101330_444_swagger_code_log_basic_r01\generated_tests\test_post_system_user_changestatus.py:16: in test_post_system_user_changestatus_case_1
+    assert data.get('code') == 0
+E   AssertionError: assert 500 == 0
+E    +  where 500 = <built-in method get of dict object at 0x000001FC47CF39C0>('code')
+E    +    where <built-in method get of dict object at 0x000001FC47CF39C0> = {'code': 500, 'msg': '操作失败'}.get
+=========================== short test summary info ===========================
+FAILED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_changestatus.py::test_post_system_user_changestatus_case_1
+1 failed in 0.15s

@@ -1,0 +1,5 @@
+.                                                                        [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED runs/20260618_101330_444_swagger_code_log_basic_r01/generated_tests/test_post_system_user_export.py::test_post_system_user_export_download
+1 passed in 0.23s
